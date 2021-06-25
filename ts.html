@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+    <div class="container">
+        <div class="album">
+            <div class="imagem">
+                <img src="album.svg"/>
+            </div>
+
+        </div>
+
+        <div class="controle">
+
+            <audio></audio>
+
+            <div id="info">
+                <p id="nome-faixa">Aperte o play!</p>
+                <div id="barra">
+                    <div id="progresso"></div>
+                </div>
+                <div id="tempos">
+                    <div id="tempoAtual">0 : 00</div>
+                    <div id="tempoTotal">0 : 00</div>
+                </div>
+            </div>
+            
+            <div id="botoes">
+                <button class="angle" type="button" onclick="prev()"><i class="fas fa-angle-left fa-lg gold"></i></button>
+                <button type="button" onclick="play()"><i class="fas fa-play fa-lg gold"></i></button>
+                <button type="button" onclick="pause()"><i class="fas fa-pause fa-lg gold"></i></button>
+                <button class="angle" type="button" onclick="next()"><i class="fas fa-angle-right fa-lg gold"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
