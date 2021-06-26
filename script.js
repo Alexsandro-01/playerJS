@@ -1,18 +1,7 @@
-function S(param) {
-    return document.querySelector(param)
-}
 
 let audio = S('audio')
 let tempoAtual = S('#tempoAtual')
 let tempoTotal = S('#tempoTotal')
-
-let musicas = [
-    'nao_troco.mp3',
-    'amoras.mp3',
-    'provavelmente.mp3',
-    'insonia.mp3',
-    'detalhes.mp3'
-]
 
 let percentual;
 let intervalo;
@@ -20,7 +9,38 @@ let intervalo;
 let mm = 0;
 let ss = 0;
 
+let musicas = [
+    'songs/nao_troco.mp3',
+    'songs/amoras.mp3',
+    'songs/provavelmente.mp3',
+    'songs/insonia.mp3',
+    'songs/detalhes.mp3'
+]
 
+//selecionar elemento html da página
+function S(param) {
+    return document.querySelector(param)
+}
+
+function playPause() {
+    let playPause = S('#playPause')
+
+    if(playPause.classList.contains('fa-play')) {
+        play()
+
+        playPause.classList.remove('fa-play')
+        playPause.classList.add('fa-pause')
+        console.log('play!')
+    }
+    else {
+        pause()
+
+        playPause.classList.remove('fa-pause')
+        playPause.classList.add('fa-play')
+        console.log('pause!')
+        
+    }
+}
 
 function play() {
     timerStop()
@@ -54,8 +74,8 @@ function next() {
     else {
         let src = audio.src.split('/')
         
-        let musicaAtual = src[4]
-        //console.log()
+        let musicaAtual = `${src[3]}/${src[4]}`
+        console.log(musicaAtual)
         
 
         audio.src = ''
@@ -93,7 +113,7 @@ function prev() {
 
         let src = audio.src.split('/')
         
-        let musicaAtual = src[4]
+        let musicaAtual = `${src[3]}/${src[4]}`
 
         audio.src = ''
         
@@ -137,7 +157,7 @@ function legenda() {
 
         nomeFaixa.innerHTML = musicaAtual
         tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
-    },200)
+    },500)
 }
 
 
@@ -162,15 +182,15 @@ function progressBar() {
 
         //tempoAtual.innerHTML = audio.currentTime.toFixed(0)
         tempoAtual.innerHTML = mm+' : '+(ss < 10 ? "0" + ss : ss)
-    }
+}
     
     
-    function timer() {
-        ss = 0
-        mm = 0
+function timer() {
+    ss = 0
+    mm = 0
 
-        intervalo = setInterval(progressBar, 1000)
-        legenda()
+    intervalo = setInterval(progressBar, 1000)
+    legenda()
 }
 
 function timerStop() {

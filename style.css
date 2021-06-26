@@ -27,6 +27,8 @@
 .imagem {
     width: 80%;
     height: 80%;
+    border-radius: 10px;
+    background-color: #292929;
 }
 
 img {
@@ -78,12 +80,16 @@ button {
 }
 
 .angle {
-    width: 20%;
-    height: 50%;
+    width: 30%;
+    height: 70%;
 }
 
 .gold {
-    color: azure;
+    color: #f0ffff;
+}
+
+#playPause  {
+    font-size: 3.5rem;
 }
 
 #barra {
