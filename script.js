@@ -9,8 +9,8 @@ let intervalo;
 let mm = 0;
 let ss = 0;
 
-let segundo
-let  minuto
+let segundo = NaN
+let  minuto = NaN
 let nomeFaixa = S('#nome-faixa')
 
 let musicas = [
@@ -155,10 +155,15 @@ function legenda() {
     let musicaAtual = src[src.length - 1]
 
     //dar tempo de setar o src no audio
-    function timeout() {
+
         setTimeout(() => {
-            segundo = Math.floor(audio.duration % 60).toFixed(0)
-            minuto = Math.floor(audio.duration / 60).toFixed(0)
+
+            while(segundo == NaN || minuto == NaN) {
+
+                segundo = Math.floor(audio.duration % 60).toFixed(0)
+                minuto = Math.floor(audio.duration / 60).toFixed(0)
+                console.log(minuto, segundo)
+            }
 
     //console.log(tempoTotal)
 
@@ -166,15 +171,11 @@ function legenda() {
             tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
 
         
-        },1000)
-    }
+        },500)
 
-    timeout()
 
-    while(segundo == NaN || minuto == NaN) {
-        timeout()
-        console.log(minuto, segundo)
-    }
+
+    
 }
 
 
