@@ -171,6 +171,7 @@ function legenda() {
 
     while(segundo == NaN || minuto == NaN) {
         timeout()
+        console.log(minuto, segundo)
     }
 }
 
