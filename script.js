@@ -10,16 +10,15 @@ let mm = 0;
 let ss = 0;
 
 let musicas = [
-    'songs/Banda-Ar15-Foi-no-teu-Olhar',
+    'songs/Foi-no-teu-Olhar.mp3',
+    'songs/Destination-Calabria.mp3',
+    'songs/Dubdogz-Atomi-Bomb.mp3',
+    'songs/I-Is-What-It-Is-Vintage-Culture.mp3',
+    'songs/MEDUZA-Paradise.mp3',
+    'songs/SAINt-JHN-Roses.mp3',
     'songs/nao-troco.mp3',
     'songs/amoras.mp3',
-    'songs/provavelmente.mp3',
-    'songs/Destination-Calabria',
-    'songs/Dubdogz-Atomi-Bomb',
-    'songs/I-Is-What-It-Is-Vintage-Culture',
-    'songs/MEDUZA-Paradise',
-    'songs/SAINt-JHN-Roses'
-
+    'songs/provavelmente.mp3'
 ]
 
 //selecionar elemento html da página
