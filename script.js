@@ -146,14 +146,14 @@ function legenda() {
     
     let src = audio.src.split('/')
     
-    let musicaAtual = src[4]
+    let musicaAtual = src[src.length - 1]
 
     //dar tempo de setar o src no audio
     setTimeout(() => {
         segundo = Math.floor(audio.duration % 60).toFixed(0)
         minuto = Math.floor(audio.duration / 60).toFixed(0)
 
-//console.log(minuto)
+//console.log(tempoTotal)
 
         nomeFaixa.innerHTML = musicaAtual
         tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
@@ -164,7 +164,7 @@ function legenda() {
 function progressBar() {
 
     percentual = (audio.currentTime / audio.duration) * 100
-    console.log(percentual)  
+    //console.log(percentual)  
 
     if(audio.currentTime == audio.duration)
         next()  
