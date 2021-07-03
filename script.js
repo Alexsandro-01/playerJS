@@ -12,8 +12,8 @@ let ss = 0;
 let musicas = [
     'songs/Foi-no-teu-Olhar.mp3',
     'songs/Destination-Calabria.mp3',
-    'songs/Dubdogz-Atomi-Bomb.mp3',
-    'songs/I-Is-What-It-Is-Vintage-Culture.mp3',
+    'songs/Dubdogz-Atomic-Bomb.mp3',
+    'songs/It-Is-What-It-Is-Vintage-Culture.mp3',
     'songs/MEDUZA-Paradise.mp3',
     'songs/SAINt-JHN-Roses.mp3',
     'songs/nao-troco.mp3',
@@ -153,17 +153,25 @@ function legenda() {
     let musicaAtual = src[src.length - 1]
 
     //dar tempo de setar o src no audio
-    setTimeout(() => {
-        segundo = Math.floor(audio.duration % 60).toFixed(0)
-        minuto = Math.floor(audio.duration / 60).toFixed(0)
+    function timeout() {
+        setTimeout(() => {
+            segundo = Math.floor(audio.duration % 60).toFixed(0)
+            minuto = Math.floor(audio.duration / 60).toFixed(0)
 
-//console.log(tempoTotal)
+    //console.log(tempoTotal)
 
-        nomeFaixa.innerHTML = musicaAtual
-        tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
+            nomeFaixa.innerHTML = musicaAtual
+            tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
 
         
-    },500)
+        },1000)
+    }
+
+    timeout()
+
+    while(tempoTotal == NaN) {
+        timeout
+    }
 }
 
 
