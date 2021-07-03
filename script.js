@@ -169,8 +169,8 @@ function legenda() {
 
     timeout()
 
-    while(tempoTotal == NaN) {
-        timeout
+    while(segundo == NaN || minuto == NaN) {
+        timeout()
     }
 }
 
