@@ -148,34 +148,11 @@ function prev() {
 //Criação da barra de Progresso
 function legenda() {
 
-
-    
     let src = audio.src.split('/')
     
     let musicaAtual = src[src.length - 1]
-
-    //dar tempo de setar o src no audio
-
-        setTimeout(() => {
-
-            while(segundo == NaN || minuto == NaN) {
-
-                segundo = Math.floor(audio.duration % 60).toFixed(0)
-                minuto = Math.floor(audio.duration / 60).toFixed(0)
-                console.log(minuto, segundo)
-            }
-
-    //console.log(tempoTotal)
-
-            nomeFaixa.innerHTML = musicaAtual
-            tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
-
-        
-        },500)
-
-
-
-    
+    nomeFaixa.innerHTML = musicaAtual
+ 
 }
 
 
@@ -200,6 +177,11 @@ function progressBar() {
 
         //tempoAtual.innerHTML = audio.currentTime.toFixed(0)
         tempoAtual.innerHTML = mm+' : '+(ss < 10 ? "0" + ss : ss)
+
+        segundo = Math.floor(audio.duration % 60).toFixed(0)
+        minuto = Math.floor(audio.duration / 60).toFixed(0)
+
+        tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
 }
     
     
