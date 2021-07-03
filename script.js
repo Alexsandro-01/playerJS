@@ -9,6 +9,10 @@ let intervalo;
 let mm = 0;
 let ss = 0;
 
+let segundo
+let  minuto
+let nomeFaixa = S('#nome-faixa')
+
 let musicas = [
     'songs/Foi-no-teu-Olhar.mp3',
     'songs/Destination-Calabria.mp3',
@@ -144,9 +148,7 @@ function prev() {
 //Criação da barra de Progresso
 function legenda() {
 
-    let segundo
-    let  minuto
-    let nomeFaixa = S('#nome-faixa')
+
     
     let src = audio.src.split('/')
     
