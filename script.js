@@ -10,11 +10,16 @@ let mm = 0;
 let ss = 0;
 
 let musicas = [
-    'songs/nao_troco.mp3',
+    'songs/Banda-Ar15-Foi-no-teu-Olhar',
+    'songs/nao-troco.mp3',
     'songs/amoras.mp3',
     'songs/provavelmente.mp3',
-    'songs/insonia.mp3',
-    'songs/detalhes.mp3'
+    'songs/Destination-Calabria',
+    'songs/Dubdogz-Atomi-Bomb',
+    'songs/I-Is-What-It-Is-Vintage-Culture',
+    'songs/MEDUZA-Paradise',
+    'songs/SAINt-JHN-Roses'
+
 ]
 
 //selecionar elemento html da página
@@ -156,7 +161,9 @@ function legenda() {
 //console.log(tempoTotal)
 
         nomeFaixa.innerHTML = musicaAtual
-        console.log(tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`)
+        tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
+
+        
     },500)
 }
 
