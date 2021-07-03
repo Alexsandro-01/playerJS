@@ -30,14 +30,14 @@ function playPause() {
 
         playPause.classList.remove('fa-play')
         playPause.classList.add('fa-pause')
-        console.log('play!')
+        //console.log('play!')
     }
     else {
         pause()
 
         playPause.classList.remove('fa-pause')
         playPause.classList.add('fa-play')
-        console.log('pause!')
+        //console.log('pause!')
         
     }
 }
@@ -74,8 +74,8 @@ function next() {
     else {
         let src = audio.src.split('/')
         
-        let musicaAtual = `${src[3]}/${src[4]}`
-        console.log(musicaAtual)
+        let musicaAtual = `${src[src.length - 2]}/${src[src.length - 1]}`
+        //console.log(musicaAtual)
         
 
         audio.src = ''
@@ -113,7 +113,7 @@ function prev() {
 
         let src = audio.src.split('/')
         
-        let musicaAtual = `${src[3]}/${src[4]}`
+        let musicaAtual = `${src[src.length - 2]}/${src[src.length - 1]}`
 
         audio.src = ''
         
@@ -156,7 +156,7 @@ function legenda() {
 //console.log(tempoTotal)
 
         nomeFaixa.innerHTML = musicaAtual
-        tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
+        console.log(tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`)
     },500)
 }
 
