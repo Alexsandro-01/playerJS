@@ -2,14 +2,14 @@ let audio = S('audio')
 let tempoAtual = S('#tempoAtual')
 let tempoTotal = S('#tempoTotal')
 
-let percentual;
-let intervalo;
+let percentual
+let intervalo
 
-let mm = 0;
-let ss = 0;
+let mm
+let ss
 
-let segundo = NaN
-let  minuto = NaN
+let segundo
+let  minuto
 let nomeFaixa = S('#nome-faixa')
 
 let musicas = [
@@ -21,6 +21,9 @@ let musicas = [
     'songs/It_Is_What_It_Is-Vintage_Culture.mp3',
     'songs/MEDUZA-Paradise.mp3',
     'songs/SAINt_JHN-Roses.mp3',
+    'songs/Distribuidora-Biu_do_Piseiro.mp3',
+    'songs/VAI_SE_TRATAR_GAROTA.mp3',
+    'songs/Tipo_Gim.mp3',
     'songs/nao_troco.mp3',
     'songs/amoras.mp3',
     'songs/provavelmente.mp3'
@@ -174,17 +177,18 @@ function progressBar() {
     percentual = (audio.currentTime / audio.duration) * 100
     //console.log(percentual)  
 
-    if(audio.currentTime == audio.duration)
+    if(audio.currentTime == audio.duration){
         next()  
+    }
     
     let progresso = S('#progresso')
         progresso.style.width = `${percentual}%`
         progresso.style.background = `#009bdb`
 
         if(ss < 59) {
-            ss++
+            ss = Math.floor(audio.currentTime % 60).toFixed(0)
         } else {
-            mm++
+            mm = Math.floor(audio.currentTime / 60).toFixed(0)
             ss = 0
         }
 
@@ -198,8 +202,6 @@ function progressBar() {
 }   
     
 function timer() {
-    ss = 0
-    mm = 0
 
     intervalo = setInterval(progressBar, 1000)
     legenda()
@@ -221,7 +223,6 @@ function playList() {
         
         nomeMusica = musicas[i].split('/')
 
-        //console.log(nomeMusica[1])
         let musica = document.createElement('p')
         musica.onclick = () => { play(musicas[i]) }
         musica.innerHTML = nomeMusica[1].replace('.mp3', '')
