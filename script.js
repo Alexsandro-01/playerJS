@@ -5,8 +5,8 @@ let tempoTotal = S('#tempoTotal')
 let percentual
 let intervalo
 
-let mm
-let ss
+let mm = 0
+let ss = 0
 
 let segundo
 let  minuto
