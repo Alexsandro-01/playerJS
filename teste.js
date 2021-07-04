@@ -11,7 +11,7 @@ function s() {
 function stop() {
     //console.log('Stop')
     clearInterval(interval)
-
+    
 }
 
 function timer() {

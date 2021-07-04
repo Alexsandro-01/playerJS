@@ -14,30 +14,42 @@
     <div class="container">
         <div class="album">
             <div class="imagem">
-                <img src="album.svg"/>
+                <img class="img" src="album.svg"/>
+
+                
             </div>
 
         </div>
 
+        <div class="legenda">
+            <div class="nomefaixa">
+                <p id="nome-faixa">Aperte o play!</p>
+            </div>
+            <div onclick="playList()" id="iconeplaylist"><i class="fas fa-stream text-blue"></i></div>
+        </div>
+
+        <div class="playlist">
+
+        </div>
         <div class="controle">
 
             <audio></audio>
-
-            <div id="info">
-                <p id="nome-faixa">Aperte o play!</p>
-                <div id="barra">
-                    <div id="progresso"></div>
-                </div>
-                <div id="tempos">
-                    <div id="tempoAtual">0 : 00</div>
-                    <div id="tempoTotal">0 : 00</div>
-                </div>
-            </div>
             
             <div id="botoes">
                 <button type="button" onclick="prev()"><i class="fas fa-angle-double-left fa-lg gold"></i></button>
                 <button  class="angle" type="button" onclick="playPause()"><i class="fas fa-play fa-lg gold" id="playPause"></i></button>
                 <button type="button" onclick="next()"><i class="fas fa-angle-double-right fa-lg gold"></i></button>
+            </div>
+            <div id="info">
+                <div id="tempos">
+                    <div id="tempoAtual">0 : 00</div>
+                    
+                    
+                    <div id="tempoTotal">0 : 00</div>
+                </div>
+                <div id="barra">
+                    <div id="progresso"></div>
+                </div>
             </div>
         </div>
     </div>

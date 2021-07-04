@@ -22,6 +22,7 @@
     align-items: center;
     width: 100%;
     height: 60%;
+    transition: 0.5s ease;
 }
 
 .imagem {
@@ -31,15 +32,29 @@
     background-color: #292929;
 }
 
-img {
+.img {
     width: 100%;
     height: 100%;
+    overflow: auto;
+}
+
+.playlist {
+    width: 100%;
+    height: 0%;
+    overflow: auto;
+    transition: 0.5s ease;
+}
+
+.playlist p {
+    text-align: left;
+    padding: 15px;
+    color: skyblue;
+    border-bottom: dimgrey 1px solid;
 }
 
 .controle {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 100%;
     height: 40%;
 }
@@ -48,22 +63,49 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40%;
+    height: 30%;
     padding: 10px;
 }
 
 p {
     text-align: center;
+    color: deepskyblue;
+    font-size: larger;
+}
+
+.legenda {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#iconeplaylist {
+    width: 10%;
+}
+
+.nomefaixa {
+    width: 80%;
+    margin-left: 10%;
 }
 
 #tempos {
     display: flex;
+    height: 40px;
     justify-content: space-between;
+}
+
+#tempos div {
+    line-height: 40px;
+}
+
+.text-blue {
+    color: #128cfd;
+    font-size: 2rem;
 }
 
 #botoes {
     display: flex;
-    height: 60%;
+    height: 50%;
     justify-content: space-around;
     align-items: center;
     padding: 10px;

@@ -1,4 +1,3 @@
-
 let audio = S('audio')
 let tempoAtual = S('#tempoAtual')
 let tempoTotal = S('#tempoTotal')
@@ -14,13 +13,15 @@ let  minuto = NaN
 let nomeFaixa = S('#nome-faixa')
 
 let musicas = [
-    'songs/Foi-no-teu-Olhar.mp3',
+    'songs/Lost_Frequencies-Rise.mp3',
+    'songs/Timmy_Trumpet-Mad_World.mp3',
+    'songs/Foi_no_teu_Olhar-AR15.mp3',
     'songs/Destination-Calabria.mp3',
-    'songs/Dubdogz-Atomic-Bomb.mp3',
-    'songs/It-Is-What-It-Is-Vintage-Culture.mp3',
+    'songs/Dubdogz-Atomic_Bomb.mp3',
+    'songs/It_Is_What_It_Is-Vintage_Culture.mp3',
     'songs/MEDUZA-Paradise.mp3',
-    'songs/SAINt-JHN-Roses.mp3',
-    'songs/nao-troco.mp3',
+    'songs/SAINt_JHN-Roses.mp3',
+    'songs/nao_troco.mp3',
     'songs/amoras.mp3',
     'songs/provavelmente.mp3'
 ]
@@ -50,17 +51,30 @@ function playPause() {
     }
 }
 
-function play() {
+function play(param) {
     timerStop()
 
-    if(audio.src != '') {
+    if(param === undefined){
+
+        if(audio.src != '') {
+            audio.play()
+            timer()
+        }
+        else {
+            audio.src = musicas[0]
+            audio.play()
+            timer()
+        }
+
+    } else {
+        audio.src = param
+        audio.load()
         audio.play()
         timer()
-    }
-    else {
-        audio.src = musicas[0]
-        audio.play()
-        timer()
+
+        let playPause = S('#playPause')
+        playPause.classList.remove('fa-play')
+        playPause.classList.add('fa-pause')
     }
 }
 
@@ -151,10 +165,9 @@ function legenda() {
     let src = audio.src.split('/')
     
     let musicaAtual = src[src.length - 1]
-    nomeFaixa.innerHTML = musicaAtual
+    nomeFaixa.innerHTML = musicaAtual.replace('.mp3', '')
  
 }
-
 
 function progressBar() {
 
@@ -182,8 +195,7 @@ function progressBar() {
         minuto = Math.floor(audio.duration / 60).toFixed(0)
 
         tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
-}
-    
+}   
     
 function timer() {
     ss = 0
@@ -195,4 +207,51 @@ function timer() {
 
 function timerStop() {
     clearInterval(intervalo)
+}
+
+function playList() {
+
+    display()
+
+    let playList = S('.playlist')
+
+    if(S('.playlist > p') == null) {
+
+        for(let i = 0; i < musicas.length; i++) {
+        
+        nomeMusica = musicas[i].split('/')
+
+        //console.log(nomeMusica[1])
+        let musica = document.createElement('p')
+        musica.onclick = () => { play(musicas[i]) }
+        musica.innerHTML = nomeMusica[1].replace('.mp3', '')
+        playList.appendChild(musica)
+        
+        }
+    }
+}
+
+function display() {
+
+    let legenda = S('.legenda')
+    let album = S('.album')
+    let playlist = S('.playlist')
+
+    if(album.style.height === "0%") {
+        album.style.height = "60%"
+        legenda.style.display = 'fixed'
+        legenda.style.top = "0px"
+        playlist.style.height = "0%"
+        playlist.style.background = "none"
+        
+    }
+    else{
+        
+        album.style.height = "0%"
+        playlist.style.height = "60%"
+        playlist.style.background = "#292929"
+    }
+
+    
+    
 }
