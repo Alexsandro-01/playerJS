@@ -20,7 +20,14 @@ function timer() {
 
 }
 */
+function start() {
+    audio = document.querySelector('audio')
+    audio.src = 'songs/amoras.mp3'
+    audio.play()
+}
 
-let a = 255.84725 % 60
-
-console.log(a)
+function  s() {
+    setTimeout(() => {
+        start()
+    }, 5000)
+}

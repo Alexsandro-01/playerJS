@@ -56,11 +56,13 @@ function play(param) {
     if(param === undefined){
 
         if(audio.src != '') {
+            audio.load()
             audio.play()
             timer()
         }
         else {
             audio.src = musicas[0]
+            audio.load()
             audio.play()
             timer()
         }
@@ -190,7 +192,7 @@ function progressBar() {
         let segundo = Math.floor(audio.duration % 60).toFixed(0)
         let minuto = Math.floor(audio.duration / 60).toFixed(0)
 
-        if(minuto != NaN && segundo != NaN) {
+        if(minuto >= 0 && segundo >= 0) {
             tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
         }
 }   
