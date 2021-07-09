@@ -8,8 +8,8 @@ let intervalo
 let mm = 0
 let ss = 0
 
-let segundo
-let  minuto
+let segundo = NaN
+let  minuto = NaN
 let nomeFaixa = S('#nome-faixa')
 
 let musicas = [
@@ -39,23 +39,21 @@ function playPause() {
 
     if(playPause.classList.contains('fa-play')) {
         play()
-
-        playPause.classList.remove('fa-play')
-        playPause.classList.add('fa-pause')
-        //console.log('play!')
     }
     else {
         pause()
-
-        playPause.classList.remove('fa-pause')
-        playPause.classList.add('fa-play')
-        //console.log('pause!')
-        
     }
 }
 
 function play(param) {
     timerStop()
+
+    let playPause = S('#playPause')
+
+    if(playPause.classList.contains('fa-play')) {
+        playPause.classList.remove('fa-play')
+        playPause.classList.add('fa-pause')
+    }
 
     if(param === undefined){
 
@@ -73,15 +71,18 @@ function play(param) {
         audio.src = param
         audio.load()
         audio.play()
-        timer()
-
-        let playPause = S('#playPause')
-        playPause.classList.remove('fa-play')
-        playPause.classList.add('fa-pause')
+        timer()  
     }
 }
 
 function pause() {
+
+    let playPause = S('#playPause')
+
+    if(playPause.classList.contains('fa-pause')) {
+        playPause.classList.remove('fa-play')
+        playPause.classList.add('fa-play')
+    }
     
     audio.pause()
     timerStop()
@@ -92,8 +93,7 @@ function next() {
     timerStop()
 
     if(audio.src == ''){
-        audio.src = musicas[0]
-        audio.play()
+        play(musicas[0])
         timer()
     }
     else {
@@ -101,7 +101,6 @@ function next() {
         
         let musicaAtual = `${src[src.length - 2]}/${src[src.length - 1]}`
         //console.log(musicaAtual)
-        
 
         audio.src = ''
         
@@ -110,13 +109,11 @@ function next() {
             if(musicaAtual == musicas[i]) {
                 
                 if((i + 1) == (musicas.length)){
-                    audio.src = musicas[0]
-                    audio.play()
+                    play(musicas[0])
                     timer()
                 }
                 else {
-                    audio.src = musicas[i + 1]
-                    audio.play()
+                    play(musicas[i + 1])
                     timer()
                 }
                 
@@ -130,8 +127,7 @@ function prev() {
     timerStop()
 
     if(audio.src == ''){
-        audio.src = musicas[0]
-        audio.play()
+        play(musicas[0])
         timer()
     }
     else {
@@ -147,13 +143,11 @@ function prev() {
             if(musicaAtual == musicas[i]) {
                 
                 if((i - 1) < 0){
-                    audio.src = musicas[musicas.length - 1]
-                    audio.play()
+                    play(musicas[musicas.length - 1])
                     timer()
                 }
                 else {
-                    audio.src = musicas[i - 1]
-                    audio.play()
+                    play(musicas[i - 1])
                     timer()
                 }
                 
@@ -198,10 +192,14 @@ function progressBar() {
         segundo = Math.floor(audio.duration % 60).toFixed(0)
         minuto = Math.floor(audio.duration / 60).toFixed(0)
 
-        tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
+        if(minuto != NaN && segundo != NaN) {
+            tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
+        }
 }   
     
 function timer() {
+    ss = 0
+    mm = 0
 
     intervalo = setInterval(progressBar, 1000)
     legenda()
