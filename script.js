@@ -201,6 +201,9 @@ function timer() {
     ss = 0
     mm = 0
 
+    ss = 0
+    mm = 0
+
     intervalo = setInterval(progressBar, 1000)
     legenda()
 }
