@@ -8,8 +8,6 @@ let intervalo
 let mm = 0
 let ss = 0
 
-let segundo = NaN
-let  minuto = NaN
 let nomeFaixa = S('#nome-faixa')
 
 let musicas = [
@@ -189,8 +187,8 @@ function progressBar() {
         //tempoAtual.innerHTML = audio.currentTime.toFixed(0)
         tempoAtual.innerHTML = mm+' : '+(ss < 10 ? "0" + ss : ss)
 
-        segundo = Math.floor(audio.duration % 60).toFixed(0)
-        minuto = Math.floor(audio.duration / 60).toFixed(0)
+        let segundo = Math.floor(audio.duration % 60).toFixed(0)
+        let minuto = Math.floor(audio.duration / 60).toFixed(0)
 
         if(minuto != NaN && segundo != NaN) {
             tempoTotal.innerHTML = `${minuto < 1 ? '0' : minuto}` + ' : ' + `${segundo < 10 ? '0' + segundo : segundo}`
@@ -198,9 +196,6 @@ function progressBar() {
 }   
     
 function timer() {
-    ss = 0
-    mm = 0
-
     ss = 0
     mm = 0
 
