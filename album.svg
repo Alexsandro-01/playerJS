@@ -1,20 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
   <defs>
     <style>
-      .cls-1, .cls-2 {
+      .cls-1, .cls-6 {
         fill: #009bdb;
       }
 
-      .cls-2 {
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
         fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ff0;
+      }
+
+      .cls-3 {
+        fill: aqua;
+      }
+
+      .cls-4 {
+        fill: lime;
+      }
+
+      .cls-5 {
+        fill: #ededed;
       }
     </style>
   </defs>
-  <rect id="Retângulo_2" data-name="Retângulo 2" class="cls-1" x="688" y="258.469" width="49" height="482.531" rx="20" ry="20"/>
-  <path id="Retângulo_2_copiar_3" data-name="Retângulo 2 copiar 3" class="cls-2" d="M812,444.856h9a20,20,0,0,1,20,20v70.738a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V464.856A20,20,0,0,1,812,444.856Z"/>
-  <path id="Retângulo_2_copiar_4" data-name="Retângulo 2 copiar 4" class="cls-2" d="M604,339.932h9a20,20,0,0,1,20,20V640.544a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V359.932A20,20,0,0,1,604,339.932Z"/>
-  <rect id="Retângulo_2_copiar" data-name="Retângulo 2 copiar" class="cls-1" x="366.5" y="324.531" width="49" height="350" rx="20" ry="20"/>
-  <path id="Retângulo_2_copiar_5" data-name="Retângulo 2 copiar 5" class="cls-2" d="M282.5,397.016h9a20,20,0,0,1,20,20V582.531a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V417.016A20,20,0,0,1,282.5,397.016Z"/>
-  <rect id="Retângulo_2_copiar_6" data-name="Retângulo 2 copiar 6" class="cls-1" x="158.5" y="449.531" width="49" height="101" rx="20" ry="20"/>
-  <rect id="Retângulo_2_copiar_2" data-name="Retângulo 2 copiar 2" class="cls-1" x="480" y="192.031" width="49" height="615.969" rx="20" ry="20"/>
+  <path id="Retângulo_2" data-name="Retângulo 2" class="cls-1" d="M734,270.457h9a20,20,0,0,1,20,20V709a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V290.457A20,20,0,0,1,734,270.457Z"/>
+  <path id="Retângulo_2_copiar_3" data-name="Retângulo 2 copiar 3" class="cls-2" d="M836,462.826h9a20,20,0,0,1,20,20v34.768a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V482.826A20,20,0,0,1,836,462.826Z"/>
+  <path id="Retângulo_2_copiar_4" data-name="Retângulo 2 copiar 4" class="cls-3" d="M632,339.932h9a20,20,0,0,1,20,20V640.544a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V359.932A20,20,0,0,1,632,339.932Z"/>
+  <path id="Retângulo_2_copiar" data-name="Retângulo 2 copiar" class="cls-4" d="M428.5,309.546h9a20,20,0,0,1,20,20V669.531a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V329.546A20,20,0,0,1,428.5,309.546Z"/>
+  <path id="Retângulo_2_copiar_5" data-name="Retângulo 2 copiar 5" class="cls-1" d="M326.993,250.279h9a20,20,0,0,1,20,20v459.91a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V270.279A20,20,0,0,1,326.993,250.279Z"/>
+  <path id="Retângulo_2_copiar_7" data-name="Retângulo 2 copiar 7" class="cls-5" d="M225.5,414.015h9a20,20,0,0,1,20,20V566.531a20,20,0,0,1-20,20h-9a20,20,0,0,1-20-20V434.015A20,20,0,0,1,225.5,414.015Z"/>
+  <path id="Retângulo_2_copiar_6" data-name="Retângulo 2 copiar 6" class="cls-1" d="M130.875,456.985h1.749a20,20,0,0,1,20,20v46.092a20,20,0,0,1-20,20h-1.749a20,20,0,0,1-20-20V476.985A20,20,0,0,1,130.875,456.985Z"/>
+  <rect id="Retângulo_2_copiar_2" data-name="Retângulo 2 copiar 2" class="cls-6" x="510" y="192.031" width="49" height="615.969" rx="20" ry="20"/>
 </svg>

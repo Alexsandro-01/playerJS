@@ -54,19 +54,19 @@ function play(param) {
     }
 
     if(param === undefined){
-
+        //volta da pausa
         if(audio.src != '') {
-            audio.load()
             audio.play()
             timer()
         }
+        //start inicial
         else {
             audio.src = musicas[0]
             audio.load()
             audio.play()
             timer()
         }
-
+    //next e prev
     } else {
         audio.src = param
         audio.load()
@@ -80,7 +80,7 @@ function pause() {
     let playPause = S('#playPause')
 
     if(playPause.classList.contains('fa-pause')) {
-        playPause.classList.remove('fa-play')
+        playPause.classList.remove('fa-pause')
         playPause.classList.add('fa-play')
     }
     
@@ -100,7 +100,6 @@ function next() {
         let src = audio.src.split('/')
         
         let musicaAtual = `${src[src.length - 2]}/${src[src.length - 1]}`
-        //console.log(musicaAtual)
 
         audio.src = ''
         
